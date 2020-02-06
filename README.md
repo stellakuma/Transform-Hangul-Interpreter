@@ -4,6 +4,7 @@ Transform-Hangul-Interpreter
 >> ### This program is developed for read transformed hangul for foreigner.
 >> ### Developed with Rust.
 --------------------------------
-> ## 패치 노트
->>
+> ## Patch Note
+>> Add End sound rule funtion. ( for 3 umjeol letter ) **[ 2020-02-07 ]**
+>> Esr for 4 umjeol letter is wip.  
  
