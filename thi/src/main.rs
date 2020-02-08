@@ -2,7 +2,7 @@ use korean::*;
 
 fn main(){
  
-	println!("{}", esr('갂'));
+	println!("{}", esr('갋'));
 
 }
 
@@ -21,11 +21,11 @@ fn esr( g: char ) -> String {
 	let c = r.disassemble();
 	let mut s: Vec<char> = Vec::new();
 	let mut a: bool = true;
-	let mut replace: char = '변';
+	let mut replace: char = 'e';
  
 	for p in c {
 	
-		if  a == true  {
+		if a == true {
 	
 			s = Vec::new();
 			a = false;
@@ -49,11 +49,28 @@ fn esr( g: char ) -> String {
 		};
 	
 	//4 umjeol
-	}/* else if s.len() == 4 {
+	} else if s.len() == 4 {
 	
-		//겹받침 발음 구분 매치 추가 요망
+		let r1 = s[2];
+		let r2 = s[3];
+		replace = match( r1, r2 ){
 	
-	}*/
+			( 'ㄱ', 'ㅅ' ) => 'ㄱ',
+			( 'ㄴ', 'ㅈ' ) => 'ㄴ',
+			( 'ㄹ', 'ㅅ' ) => 'ㄹ',
+			( 'ㄹ', 'ㅌ' ) => 'ㄹ',
+			( 'ㅂ', 'ㅅ' ) => 'ㅂ',
+			( 'ㄹ', 'ㅁ' ) => 'ㅁ',
+			( 'ㄹ', 'ㅍ' ) => 'ㅂ',
+			//자음에 따른 보정 필요
+			( 'ㄹ', 'ㄱ' ) => 'ㄱ',
+			//밟, 넓에 대한 보정 필요
+			( 'ㄹ', 'ㅂ' ) => 'ㄹ',
+			_ => replace
+	
+		}
+	
+	}
 	
 	let mut result: [char; 3] = [ 'e', 'x', 'p' ];
 	let mut counter: usize = 0;
@@ -72,8 +89,7 @@ fn esr( g: char ) -> String {
 		}
 	}
 	
-	let fr: String = result.iter().cloned().assemble();
-	return fr;
+	return result.iter().cloned().assemble();
 	
 	/*
 	for test in result.iter(){

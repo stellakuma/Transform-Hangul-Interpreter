@@ -6,5 +6,6 @@ Transform-Hangul-Interpreter
 --------------------------------
 > ## Patch Note
 >> Add End sound rule funtion. ( for 3 umjeol letter ) **[ 2020-02-07 ]**  
->> Esr for 4 umjeol letter is wip.  
+>> Add 4 umjeol esr. **[ 2020-02-08 ]**  
+>> implements for ㄺ, 밟, 넓 is wip.   
  

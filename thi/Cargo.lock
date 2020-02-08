@@ -7,7 +7,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "thi"
-version = "0.0.1"
+version = "0.0.2"
 dependencies = [
  "korean 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
